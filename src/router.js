@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import External from './views/External.vue'
+import Shared from './views/Shared.vue'
 
 Vue.use(Router)
 
@@ -14,12 +16,22 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/external',
+      name: 'external',
+      component: External
+    },
+    {
+      path: '/shared',
+      name: 'shared',
+      component: Shared
     }
+    // {
+    //   path: '/about',
+    //   name: 'about',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    //   component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+    // }
   ]
 })
