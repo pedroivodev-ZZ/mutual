@@ -4,16 +4,18 @@
             <input type="text" value="FGDFGDFafasfdasf">
             <button>Pesquisar</button>
         </div>
-         <!-- :items="items" -->
-        <List />
+        <List :items="items" />
     </div>
 </template>
 <script lang="ts">
-import List from './List.vue';
+import List from './List.vue'
 
 export default {
-    name: 'SearchableList',
-    components: { List }
+  name: 'SearchableList',
+  components: { List },
+  props: {
+    items: Object
+  }
 }
 </script>
 
@@ -39,6 +41,4 @@ export default {
         @media (max-width: 400px)
             height: 100%
             width: 20%
-
 </style>
-
